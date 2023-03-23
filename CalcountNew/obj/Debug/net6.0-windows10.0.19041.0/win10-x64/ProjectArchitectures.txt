@@ -1,0 +1,1 @@
+C:\Users\yaros\source\repos\CalcountNew\CalcountNew\CalcountNew.csproj;x64

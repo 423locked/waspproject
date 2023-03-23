@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="CalcountNew.Views.ViewMealsPage"
+             Title="View your meals!">
+    <ScrollView AutomationProperties.IsInAccessibleTree="True">
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label 
+                Text="Your Meals"
+                FontSize="Large"
+                Padding="10"
+                FontFamily="PoppinsBold"
+                TextColor="MediumPurple"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Simply tap on a meal to remove it"
+                FontSize="Medium"
+                Padding="10"
+                FontFamily="PoppinsMedium"
+                TextColor="Gray"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            
+            
+            <Label 
+                Text="breakfasts"
+                FontSize="Large"
+                Padding="10"
+                FontFamily="PoppinsBold"
+                TextColor="DarkViolet"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" />
+
+            <ListView  
+                ItemsSource="{Binding Breakfasts}"
+                ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="30">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label 
+                                   Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   FontSize="Large"
+                                   FontFamily="PoppinsBold" />
+
+                                <Label 
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   FontSize="Large"
+                                   Text="{Binding Description}"
+                                   FontFamily="PoppinsRegular"
+                                   VerticalOptions="End" />
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label 
+                Text="lunches"
+                FontSize="Large"
+                Padding="10"
+                FontFamily="PoppinsBold"
+                TextColor="DarkViolet"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" />
+
+            <ListView  
+                ItemsSource="{Binding Lunches}"
+                ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="30">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label 
+                                   Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   FontSize="Large"
+                                   FontFamily="PoppinsBold" />
+
+                                <Label 
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   FontSize="Large"
+                                   Text="{Binding Description}"
+                                   FontFamily="PoppinsRegular"
+                                   VerticalOptions="End" />
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label 
+                Text="dinners"
+                FontSize="Large"
+                Padding="10"
+                FontFamily="PoppinsBold"
+                TextColor="DarkViolet"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" />
+
+            <ListView  
+                ItemsSource="{Binding Dinners}"
+                ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="30">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label 
+                                   Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   FontSize="Large"
+                                   FontFamily="PoppinsBold" />
+
+                                <Label 
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   FontSize="Large"
+                                   Text="{Binding Description}"
+                                   FontFamily="PoppinsRegular"
+                                   VerticalOptions="End"
+                                   LineBreakMode="WordWrap" />
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

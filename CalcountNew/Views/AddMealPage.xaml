@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calcount.Views.AddMealPage"
+             Title="Add a meal">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Add a meal"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Add a meal"
+                FontSize="34"
+                FontFamily="PoppinsRegular"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Enter meal description (e.g. 1 cup of oats, 2 bananas, 50 grams of pb)"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Add a meal"
+                FontSize="24"
+                FontFamily="PoppinsRegular"
+                TextColor="DimGray"
+                HorizontalOptions="Center" />
+
+            <Entry 
+                Placeholder="Meal Description" 
+                FontSize="24"
+                FontFamily="PoppinsRegular"
+                PlaceholderColor="MediumPurple" 
+                Text="{Binding MealDescription}" />
+
+            <Picker
+                FontSize="24"
+                FontFamily="PoppinsRegular"
+                ItemsSource="{Binding MealTypes, Mode=TwoWay}"
+                SelectedIndex="{Binding SelectedMealType, Mode=TwoWay}"  />
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Column="0"
+                    x:Name="AddMealBtn"
+                    Text="Add Meals"
+                    FontSize="30"
+                    Command="{Binding SubmitMealCommand}"
+                    SemanticProperties.Hint="Adds meals to your breakfast"
+                    HorizontalOptions="Center" />
+
+                <Button
+                    Grid.Column="1"
+                    Text="View Meals"
+                    FontSize="30"
+                    Command="{Binding ViewMealsCommand}"
+                    SemanticProperties.Hint="Adds meals to your breakfast"
+                    HorizontalOptions="Center" />
+            </Grid>
+
+
+
+            <Label
+                Text="{Binding Result}"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Add a meal"
+                FontSize="24"
+                HorizontalOptions="Center" />
+
+            <ListView ItemsSource="{Binding Meals}" HorizontalOptions="Center" IsVisible="{Binding AreMealsReady}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="Center">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="Start">
+                                    <Label FontSize="20" TextColor="#0C3B2E"  Text="{Binding Name}"  VerticalOptions="Start" />
+                                    <Label FontSize="20" Text="{Binding Calories}" VerticalOptions="End" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            
+
+            
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Welcome to Calcount"
+             x:Class="Calcount.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="{Binding WelcomeSign}"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Count your calories!"
+                FontSize="34"
+                FontFamily="PoppinsRegular"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="AddMealBtn"
+                Text="{Binding ButtonText}"
+                FontSize="Large"
+                FontFamily="PoppinsRegular"
+                SemanticProperties.Hint="Adds meals to your breakfast"
+                Command="{Binding AddMealCommand}"
+                HorizontalOptions="Center" />
+            
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
